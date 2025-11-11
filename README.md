@@ -95,8 +95,8 @@ Streamlined invoice creation tool.
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/larcjs/larc-examples.git
-   cd larc-examples
+   git clone https://github.com/larcjs/examples.git
+   cd examples
    ```
 
 2. **Install dependencies (optional):**
@@ -191,7 +191,7 @@ Node/Express alternatives for PHP examples.
 ## 📂 Repository Structure
 
 ```
-larc-examples/
+examples/
 ├── examples/               # Progressive examples (00-18)
 │   ├── 00-intro.html
 │   ├── 01-hello.html
@@ -301,10 +301,10 @@ npm run test:example -- 06-crud
 
 ## 🔗 Related Packages
 
-- **[@larcjs/core](https://github.com/larcjs/larc-core)** — Core PAN messaging bus
-- **[@larcjs/components](https://github.com/larcjs/larc-components)** — UI components library
-- **[@larcjs/devtools](https://github.com/larcjs/larc-devtools)** — Chrome DevTools extension
-- **[@larcjs/site](https://github.com/larcjs/larc-site)** — Documentation website
+- **[@larcjs/core](https://github.com/larcjs/core)** — Core PAN messaging bus
+- **[@larcjs/components](https://github.com/larcjs/components)** — UI components library
+- **[@larcjs/devtools](https://github.com/larcjs/devtools)** — Chrome DevTools extension
+- **[@larcjs/site](https://github.com/larcjs/site)** — Documentation website
 
 ---
 
@@ -330,9 +330,9 @@ MIT © Chris Robison
 
 ## 🆘 Support
 
-- 📖 [Documentation](https://larcjs.github.io/larc-site/)
-- 💬 [Discussions](https://github.com/larcjs/larc-examples/discussions)
-- 🐛 [Issue Tracker](https://github.com/larcjs/larc-examples/issues)
+- 📖 [Documentation](https://larcjs.github.io/site/)
+- 💬 [Discussions](https://github.com/larcjs/examples/discussions)
+- 🐛 [Issue Tracker](https://github.com/larcjs/examples/issues)
 - 📧 [Email Support](mailto:support@larc.dev)
 
 ---

@@ -19,12 +19,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/larcjs/larc-examples.git"
+    "url": "https://github.com/larcjs/examples.git"
   },
   "bugs": {
-    "url": "https://github.com/larcjs/larc-examples/issues"
+    "url": "https://github.com/larcjs/examples/issues"
   },
-  "homepage": "https://github.com/larcjs/larc-examples#readme",
+  "homepage": "https://github.com/larcjs/examples#readme",
   "dependencies": {},
   "devDependencies": {}
 }
