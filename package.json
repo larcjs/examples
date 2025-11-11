@@ -1,0 +1,30 @@
+{
+  "name": "@larcjs/examples",
+  "version": "1.0.0",
+  "description": "LARC Examples - Demo applications and usage examples for the PAN messaging system",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs"
+  },
+  "keywords": [
+    "larc",
+    "pan",
+    "examples",
+    "demos",
+    "tutorials"
+  ],
+  "author": "Chris Robison",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/larcjs/larc-examples.git"
+  },
+  "bugs": {
+    "url": "https://github.com/larcjs/larc-examples/issues"
+  },
+  "homepage": "https://github.com/larcjs/larc-examples#readme",
+  "dependencies": {},
+  "devDependencies": {}
+}
