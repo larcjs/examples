@@ -69,13 +69,19 @@
 
   <pan-data-connector resource="users" base-url="https://jsonplaceholder.typicode.com"></pan-data-connector>
 
-  <script type="module" src="../src/pan.js"></script>
   <script type="module">
-    import { PanClient } from '../src/components/pan-client.mjs';
+    if (!customElements.get('pan-bus')) {
+      await import('../../core/src/components/pan-bus.mjs');
+    }
+  </script>
+  <script type="module">
+    import { PanClient } from '../../core/src/components/pan-client.mjs';
     const pc = new PanClient();
     document.getElementById('refresh')?.addEventListener('click', () => {
       pc.publish({ topic: 'users.list.get', data: {} });
     });
   </script>
+
+  <pan-bus debug="true"></pan-bus>
 </body>
 </html>

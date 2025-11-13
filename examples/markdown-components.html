@@ -289,7 +289,11 @@ Click the buttons above to see programmatic control in action!" preview="false">
   <pan-theme-provider theme="auto"></pan-theme-provider>
   <pan-theme-toggle variant="icon" style="position: fixed; top: 1rem; right: 1rem;"></pan-theme-toggle>
 
-  <script type="module" src="../src/pan.js"></script>
+  <script type="module">
+    if (!customElements.get('pan-bus')) {
+      await import('../../core/src/components/pan-bus.mjs');
+    }
+  </script>
   <script type="module">
     const bus = document.querySelector('pan-bus');
 
@@ -370,5 +374,7 @@ Click the buttons above to see programmatic control in action!" preview="false">
 
     console.log('📝 Markdown Components Examples loaded');
   </script>
+
+  <pan-bus debug="true"></pan-bus>
 </body>
 </html>

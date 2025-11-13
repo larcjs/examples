@@ -90,9 +90,13 @@
       .menu-btn{ display:inline-flex }
     }
   </style>
-  <script type="module" src="../../src/pan.js"></script>
   <script type="module">
-    import { PanClient } from '../../src/components/pan-client.mjs';
+    if (!customElements.get('pan-bus')) {
+      await import('../../../core/src/components/pan-bus.mjs');
+    }
+  </script>
+  <script type="module">
+    import { PanClient } from '../../../core/src/components/pan-client.mjs';
 
     // Simple helper to fetch resources from api.php
     async function listResources(api){
@@ -351,5 +355,7 @@
     import '../../src/components/pan-theme-provider.mjs';
     import '../../src/components/pan-theme-toggle.mjs';
   </script>
+
+  <pan-bus debug="true"></pan-bus>
 </body>
 </html>

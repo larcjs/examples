@@ -69,9 +69,13 @@
 
   <pan-php-connector id="conn" api-url="../api.php" resource="Business" page-size="20"></pan-php-connector>
 
-  <script type="module" src="../src/pan.js"></script>
   <script type="module">
-    import { PanClient } from '../src/components/pan-client.mjs';
+    if (!customElements.get('pan-bus')) {
+      await import('../../core/src/components/pan-bus.mjs');
+    }
+  </script>
+  <script type="module">
+    import { PanClient } from '../../core/src/components/pan-client.mjs';
 
     const pc = new PanClient();
     const $ = (s)=> document.querySelector(s);
@@ -106,5 +110,7 @@
     $('#api')?.addEventListener('change', populateResourceDatalist);
     setTimeout(load, 0);
   </script>
+
+  <pan-bus debug="true"></pan-bus>
 </body>
 </html>

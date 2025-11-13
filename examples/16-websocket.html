@@ -236,7 +236,7 @@
   </pan-websocket>
 
   <script type="module">
-    import { PanClient } from '../src/components/pan-client.mjs';
+    import { PanClient } from '../../core/src/components/pan-client.mjs';
 
     const pc = new PanClient();
     const messages = document.getElementById('messages');
@@ -343,6 +343,12 @@
   </script>
 
   <!-- Autoload all components -->
-  <script type="module" src="../src/pan.js"></script>
+  <script type="module">
+    if (!customElements.get('pan-bus')) {
+      await import('../../core/src/components/pan-bus.mjs');
+    }
+  </script>
+
+  <pan-bus debug="true"></pan-bus>
 </body>
 </html>

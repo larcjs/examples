@@ -126,7 +126,7 @@
   <script type="module" src="./lib/data-handler.mjs"></script>
 
   <script type="module">
-    import { PanClient } from '../../src/components/pan-client.mjs';
+    import { PanClient } from '../../../core/src/components/pan-client.mjs';
 
     const client = new PanClient();
 
@@ -147,5 +147,7 @@
       alert(`Error: ${msg.data.message}`);
     });
   </script>
+
+  <pan-bus debug="true"></pan-bus>
 </body>
 </html>

@@ -11,25 +11,23 @@
   <pan-inspector style="height:300px"></pan-inspector>
   
   <script type="module">
-    // Log the pan.js location
-    console.log('Loading pan.js from:', new URL('./src/pan.js', window.location.href).href);
-    
-    // Import and check config
-    const pan = await import('./src/pan.js');
-    console.log('pan.js loaded:', pan);
-    
+    // Load pan-bus if not already registered
+    if (!customElements.get('pan-bus')) {
+      await import('../core/src/components/pan-bus.mjs');
+    }
+
     // Wait for components to load
     await new Promise(r => setTimeout(r, 1000));
-    
+
     console.log('pan-bus defined?', customElements.get('pan-bus'));
     console.log('pan-inspector defined?', customElements.get('pan-inspector'));
-    
+
     if (!customElements.get('pan-bus')) {
       console.error('❌ pan-bus NOT defined');
     } else {
       console.log('✅ pan-bus is defined');
     }
-    
+
     if (!customElements.get('pan-inspector')) {
       console.error('❌ pan-inspector NOT defined');
     } else {

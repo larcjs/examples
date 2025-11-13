@@ -211,9 +211,13 @@
     <pre id="event-log" style="clear: both; max-height: 300px; overflow-y: auto;">Waiting for events...</pre>
   </div>
 
-  <script type="module" src="../src/pan.js"></script>
   <script type="module">
-    import { PanClient } from '../src/components/pan-client.mjs';
+    if (!customElements.get('pan-bus')) {
+      await import('../../core/src/components/pan-bus.mjs');
+    }
+  </script>
+  <script type="module">
+    import { PanClient } from '../../core/src/components/pan-client.mjs';
 
     const client = new PanClient();
     await client.ready();
@@ -366,5 +370,7 @@
       return `${header}.${payload}.${signature}`;
     }
   </script>
+
+  <pan-bus debug="true"></pan-bus>
 </body>
 </html>

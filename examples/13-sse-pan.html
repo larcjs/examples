@@ -112,9 +112,13 @@
   </div>
 </div>
 
-<script type="module" src="../src/pan.js"></script>
 <script type="module">
-  import { PanClient } from '../src/components/pan-client.mjs';
+    if (!customElements.get('pan-bus')) {
+      await import('../../core/src/components/pan-bus.mjs');
+    }
+  </script>
+<script type="module">
+  import { PanClient } from '../../core/src/components/pan-client.mjs';
 
   const pc = new PanClient();
 

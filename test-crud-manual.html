@@ -55,9 +55,13 @@
     ]</script>
   </pan-data-provider>
 
-  <script type="module" src="./src/pan.js"></script>
   <script type="module">
-    import { PanClient } from './src/components/pan-client.mjs';
+    if (!customElements.get('pan-bus')) {
+      await import('../core/src/components/pan-bus.mjs');
+    }
+  </script>
+  <script type="module">
+    import { PanClient } from '../core/src/components/pan-client.mjs';
     
     const log = document.getElementById('log');
     function addLog(msg, type = '') {
@@ -102,5 +106,7 @@
     
     addLog('Setup complete - try adding a user!', 'pub');
   </script>
+
+  <pan-bus debug="true"></pan-bus>
 </body>
 </html>

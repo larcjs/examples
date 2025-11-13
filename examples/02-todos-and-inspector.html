@@ -64,6 +64,12 @@
   <todo-provider hidden></todo-provider>
 
   <!-- PAN Autoload: just one script tag, components load automatically -->
-  <script type="module" src="../src/pan.js"></script>
+  <script type="module">
+    if (!customElements.get('pan-bus')) {
+      await import('../../core/src/components/pan-bus.mjs');
+    }
+  </script>
+
+  <pan-bus debug="true"></pan-bus>
 </body>
 </html>

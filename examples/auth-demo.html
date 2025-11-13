@@ -236,7 +236,7 @@
 
   <!-- Components -->
   <script type="module">
-    import { PanClient } from '../src/components/pan-client.mjs';
+    import { PanClient } from '../../core/src/components/pan-client.mjs';
 
     // Auth Status Component
     customElements.define('auth-status', class extends HTMLElement {
@@ -417,5 +417,7 @@
       }
     });
   </script>
+
+  <pan-bus debug="true"></pan-bus>
 </body>
 </html>

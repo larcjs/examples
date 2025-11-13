@@ -47,7 +47,11 @@
     </main>
   </div>
 
-  <script type="module" src="../src/pan.js"></script>
+  <script type="module">
+    if (!customElements.get('pan-bus')) {
+      await import('../../core/src/components/pan-bus.mjs');
+    }
+  </script>
   <script type="module">
     class PanClient {
       constructor(host = document) { this.host = host; }
@@ -133,5 +137,7 @@
 
     ReactDOM.createRoot(document.getElementById('app')).render(React.createElement(App));
   </script>
+
+  <pan-bus debug="true"></pan-bus>
 </body>
 </html>
