@@ -18,7 +18,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/larcjs/examples.git"
+    "url": "git+https://github.com/larcjs/examples.git"
   },
   "bugs": {
     "url": "https://github.com/larcjs/examples/issues"
