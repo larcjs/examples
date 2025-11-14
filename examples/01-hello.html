@@ -45,11 +45,13 @@
     </main>
   </div>
 
-  <!-- PAN Autoload: just one script tag, then use any component -->
+  <!-- PAN Autoload: loads pan-bus and enables automatic component discovery -->
   <script type="module">
     if (!customElements.get('pan-bus')) {
       await import('../../core/src/components/pan-bus.mjs');
     }
+    // Load autoload system to discover and load custom elements on demand
+    await import('../src/pan.mjs');
   </script>
 
   <pan-bus debug="true"></pan-bus>
