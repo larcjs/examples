@@ -209,7 +209,8 @@
     const pc = new PanClient();
     const content = document.getElementById('page-content');
 
-    // Register routes with the router
+    // Wait for pan-router to be defined before registering routes
+    await customElements.whenDefined('pan-router');
     const router = document.querySelector('pan-router');
     router.addRoute('/profile/:id');
 
