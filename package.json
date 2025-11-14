@@ -3,7 +3,6 @@
   "version": "1.0.1",
   "description": "LARC Examples - Demo applications and usage examples for the PAN messaging system",
   "type": "module",
-  "private": true,
   "scripts": {
     "dev": "node server.mjs",
     "start": "node server.mjs"
