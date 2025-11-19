@@ -586,13 +586,14 @@
         };
 
         const parent = findParent(notesData, parentId);
-        if (parent) {
+        if (parent && parent.children) {
           parent.children.push(newNote);
         }
       } else {
         notesData.push(newNote);
       }
 
+      // Send updated tree
       pc.publish({ topic: 'notes.data.set', data: { tree: notesData } });
       document.getElementById('new-note-modal').classList.remove('active');
       document.getElementById('note-name').value = '';
@@ -629,13 +630,14 @@
         };
 
         const parent = findParent(notesData, parentId);
-        if (parent) {
+        if (parent && parent.children) {
           parent.children.push(newFolder);
         }
       } else {
         notesData.push(newFolder);
       }
 
+      // Send updated tree
       pc.publish({ topic: 'notes.data.set', data: { tree: notesData } });
       document.getElementById('new-folder-modal').classList.remove('active');
       document.getElementById('folder-name').value = '';
