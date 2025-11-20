@@ -37,6 +37,22 @@ This repository contains a complete collection of examples, tutorials, and full-
 
 ...and more!
 
+### 🎯 Featured Demo: Hybrid Dashboard
+
+**[Hybrid Dashboard](hybrid-dashboard/)** - **React + Vue + LARC working together**
+
+This killer demo proves LARC's value proposition:
+- **Mix frameworks seamlessly** - React chart, Vue filters, LARC components
+- **60% bundle size reduction** - 322 KB vs 837 KB traditional approach
+- **PAN coordination** - All components communicate without tight coupling
+- **Real bundle comparison** - See actual savings in the demo
+
+**Start here** to understand how LARC complements frameworks rather than replacing them.
+
+[📊 View Demo](hybrid-dashboard/) | [📖 Read Guide](hybrid-dashboard/README.md)
+
+---
+
 ### 🚀 Demo Applications (`/apps`)
 
 Full-featured applications showcasing real-world usage:
