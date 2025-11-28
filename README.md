@@ -143,7 +143,7 @@ Most examples work directly with CDN links:
 <html>
 <head>
   <meta charset="utf-8">
-  <script type="module" src="https://unpkg.com/@larcjs/core/src/pan.js"></script>
+  <script type="module" src="https://unpkg.com/@larcjs/core@1.1.1/src/pan.js"></script>
 </head>
 <body>
   <!-- Your PAN components here -->
@@ -349,7 +349,6 @@ MIT © Chris Robison
 - 📖 [Documentation](https://larcjs.github.io/site/)
 - 💬 [Discussions](https://github.com/larcjs/examples/discussions)
 - 🐛 [Issue Tracker](https://github.com/larcjs/examples/issues)
-- 📧 [Email Support](mailto:support@larc.dev)
 
 ---
 
