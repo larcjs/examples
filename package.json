@@ -5,7 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "node server.mjs",
-    "start": "node server.mjs"
+    "start": "node server.mjs",
+    "api-legacy": "node api-legacy.js",
+    "api": "node apps/api.js",
+    "auth": "node auth.js",
+    "sse": "node sse.js",
+    "backends": "concurrently \"npm:api-legacy\" \"npm:api\" \"npm:auth\" \"npm:sse\""
   },
   "keywords": [
     "larc",
@@ -24,6 +29,12 @@
     "url": "https://github.com/larcjs/examples/issues"
   },
   "homepage": "https://github.com/larcjs/examples#readme",
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "mysql2": "^3.6.5",
+    "better-sqlite3": "^9.2.2",
+    "bcryptjs": "^2.4.3"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
 }
