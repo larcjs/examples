@@ -8,32 +8,48 @@
 
 This repository contains a complete collection of examples, tutorials, and full-featured demo applications demonstrating the capabilities of the LARC (Lightweight Asynchronous Relay Core) framework.
 
+## 🆕 New: Core Lite Package
+
+LARC now offers **@larcjs/core-lite** - just **9KB minified (3KB gzipped)**! That's 94% smaller than React.
+
+Perfect for:
+- 📦 Bundle-conscious projects
+- ⚡ Fast-loading pages
+- 🎯 Simple pub/sub needs (no routing/debug)
+
+See [00a-core-lite-demo.html](examples/00a-core-lite-demo.html) for a working example!
+
+[Learn more about package options →](../PACKAGES.md)
+
+---
+
 ## 📚 What's Inside
 
 ### 🎓 Examples (`/examples`)
 30+ progressive examples from basic concepts to advanced patterns:
 
 1. **[00-intro.html](examples/00-intro.html)** - Introduction to PAN concepts
-2. **[01-hello.html](examples/01-hello.html)** - Hello World with PAN
-3. **[02-todos-and-inspector.html](examples/02-todos-and-inspector.html)** - Simple todo app with debugging
-4. **[03-broadcastchannel.html](examples/03-broadcastchannel.html)** - Cross-tab communication
-5. **[04-react-wrapper.html](examples/04-react-wrapper.html)** - Integration with React
-6. **[05-lit-wrapper.html](examples/05-lit-wrapper.html)** - Integration with Lit
-7. **[06-crud.html](examples/06-crud.html)** - Basic CRUD operations
-8. **[07-rest-connector.html](examples/07-rest-connector.html)** - REST API integration
-9. **[08-workers.html](examples/08-workers.html)** - Web Workers with PAN
-10. **[09-schema-form.html](examples/09-schema-form.html)** - JSON Schema forms
-11. **[10-sse-store.html](examples/10-sse-store.html)** - Server-Sent Events
-12. **[11-graphql-connector.html](examples/11-graphql-connector.html)** - GraphQL integration
-13. **[12-php-connector.html](examples/12-php-connector.html)** - PHP backend integration
-14. **[13-sse-pan.html](examples/13-sse-pan.html)** - SSE with PAN messaging
-15. **[14-forwarder.html](examples/14-forwarder.html)** - Message forwarding patterns
-16. **[15-router.html](examples/15-router.html)** - Client-side routing
-17. **[16-websocket.html](examples/16-websocket.html)** - WebSocket integration
-18. **[17-enhanced-security.html](examples/17-enhanced-security.html)** - Security features
-19. **[17-indexeddb.html](examples/17-indexeddb.html)** - IndexedDB integration
-20. **[18-jwt-auth.html](examples/18-jwt-auth.html)** - JWT authentication
-21. **[18-typescript-usage.ts](examples/18-typescript-usage.ts)** - TypeScript examples
+2. **[00a-core-lite-demo.html](examples/00a-core-lite-demo.html)** ⭐ **NEW!** - @larcjs/core-lite demo (9KB bundle)
+3. **[01-hello.html](examples/01-hello.html)** - Hello World with PAN
+4. **[02-todos-and-inspector.html](examples/02-todos-and-inspector.html)** - Simple todo app with debugging
+5. **[03-broadcastchannel.html](examples/03-broadcastchannel.html)** - Cross-tab communication
+6. **[04-react-wrapper.html](examples/04-react-wrapper.html)** - Integration with React
+7. **[05-lit-wrapper.html](examples/05-lit-wrapper.html)** - Integration with Lit
+8. **[06-crud.html](examples/06-crud.html)** - Basic CRUD operations
+9. **[07-rest-connector.html](examples/07-rest-connector.html)** - REST API integration
+10. **[08-workers.html](examples/08-workers.html)** - Web Workers with PAN
+11. **[09-schema-form.html](examples/09-schema-form.html)** - JSON Schema forms
+12. **[10-sse-store.html](examples/10-sse-store.html)** - Server-Sent Events
+13. **[11-graphql-connector.html](examples/11-graphql-connector.html)** - GraphQL integration
+14. **[12-php-connector.html](examples/12-php-connector.html)** - PHP backend integration
+15. **[13-sse-pan.html](examples/13-sse-pan.html)** - SSE with PAN messaging
+16. **[14-forwarder.html](examples/14-forwarder.html)** - Message forwarding patterns
+17. **[15-router.html](examples/15-router.html)** - Client-side routing
+18. **[16-websocket.html](examples/16-websocket.html)** - WebSocket integration
+19. **[17-enhanced-security.html](examples/17-enhanced-security.html)** - Security features
+20. **[17-indexeddb.html](examples/17-indexeddb.html)** - IndexedDB integration
+21. **[18-jwt-auth.html](examples/18-jwt-auth.html)** - JWT authentication
+22. **[18-typescript-usage.ts](examples/18-typescript-usage.ts)** - TypeScript examples
 
 ...and more!
 
@@ -143,7 +159,11 @@ Most examples work directly with CDN links:
 <html>
 <head>
   <meta charset="utf-8">
-  <script type="module" src="https://unpkg.com/@larcjs/core@1.1.1/src/pan.js"></script>
+  <!-- Option 1: Core Lite (9KB - recommended) -->
+  <script type="module" src="https://unpkg.com/@larcjs/core-lite@latest/src/pan.js"></script>
+
+  <!-- Option 2: Full Core (40KB - includes routing & debug) -->
+  <!-- <script type="module" src="https://unpkg.com/@larcjs/core@1.1.1/src/pan.js"></script> -->
 </head>
 <body>
   <!-- Your PAN components here -->
