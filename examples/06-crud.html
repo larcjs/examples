@@ -4,6 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PAN Demo Suite · 06 CRUD (Mock)</title>
+
+  <!-- Import Maps for clean component imports -->
+  <script type="importmap">
+  {
+    "imports": {
+      "@pan/core/": "/core/src/components/",
+      "@pan/components/": "/examples/src/components/",
+      "@pan/ui/": "/ui/src/components/"
+    }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -36,7 +47,7 @@
                 <div class="subtitle">Subscribed to <code>users.list.state</code> with retained delivery.</div>
               </div>
               <div class="toolbar">
-                <a class="button-link" href="../src/components/pan-data-table.mjs">View source</a>
+                <a class="button-link" href="@pan/components/pan-data-table.mjs">View source</a>
               </div>
             </div>
             <div class="panel-body">
@@ -73,7 +84,7 @@
 
   <script type="module">
     if (!customElements.get('pan-bus')) {
-      await import('../../core/src/components/pan-bus.mjs');
+      await import('@pan/core/pan-bus.mjs');
     // Load autoload system to discover and load custom elements on demand
     await import('../src/pan.mjs');
     }

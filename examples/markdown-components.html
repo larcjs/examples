@@ -4,6 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Markdown Components Example — PAN</title>
+
+  <!-- Import Maps for clean component imports -->
+  <script type="importmap">
+  {
+    "imports": {
+      "@pan/core/": "/core/src/components/",
+      "@pan/components/": "/examples/src/components/",
+      "@pan/ui/": "/ui/src/components/"
+    }
+  }
+  </script>
   <link rel="stylesheet" href="../assets/theme.css">
   <style>
     body {
@@ -291,7 +302,7 @@ Click the buttons above to see programmatic control in action!" preview="false">
 
   <script type="module">
     if (!customElements.get('pan-bus')) {
-      await import('../../core/src/components/pan-bus.mjs');
+      await import('@pan/core/pan-bus.mjs');
     // Load autoload system to discover and load custom elements on demand
     await import('../src/pan.mjs');
     }

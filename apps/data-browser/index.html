@@ -4,6 +4,17 @@
   <meta charset="utf-8" />
   <title>PAN Data Browser</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Import Maps for clean component imports -->
+  <script type="importmap">
+  {
+    "imports": {
+      "@pan/core/": "/core/src/components/",
+      "@pan/components/": "/examples/src/components/",
+      "@pan/ui/": "/ui/src/components/"
+    }
+  }
+  </script>
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
     :root{
@@ -351,9 +362,13 @@
   <!-- Theme System -->
   <pan-theme-provider theme="auto"></pan-theme-provider>
 
+  <!-- PAN Autoload: loads pan-bus and enables automatic component discovery -->
   <script type="module">
-    import '../../src/components/pan-theme-provider.mjs';
-    import '../../src/components/pan-theme-toggle.mjs';
+    if (!customElements.get('pan-bus')) {
+      await import('@pan/core/pan-bus.mjs');
+    }
+    // Load autoload system to discover and load custom elements on demand
+    await import('../../src/pan.mjs');
   </script>
 
   <pan-bus debug="true"></pan-bus>

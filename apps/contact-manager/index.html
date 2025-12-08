@@ -4,6 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact Manager — LARC PAN Demo</title>
+
+  <!-- Import Maps for clean component imports -->
+  <script type="importmap">
+  {
+    "imports": {
+      "@pan/core/": "/core/src/components/",
+      "@pan/components/": "/examples/src/components/",
+      "@pan/ui/": "/ui/src/components/"
+    }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -987,8 +998,14 @@
     }
   </script>
 
-  <!-- Load PAN Autoload -->
-  <script type="module" src="../../src/pan.mjs"></script>
+  <!-- PAN Autoload: loads pan-bus and enables automatic component discovery -->
+  <script type="module">
+    if (!customElements.get('pan-bus')) {
+      await import('@pan/core/pan-bus.mjs');
+    }
+    // Load autoload system to discover and load custom elements on demand
+    await import('../../src/pan.mjs');
+  </script>
 
   <pan-bus debug="true"></pan-bus>
 </body>

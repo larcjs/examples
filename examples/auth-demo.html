@@ -4,6 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PAN Authentication Demo</title>
+
+  <!-- Import Maps for clean component imports -->
+  <script type="importmap">
+  {
+    "imports": {
+      "@pan/core/": "/core/src/components/",
+      "@pan/components/": "/examples/src/components/",
+      "@pan/ui/": "/ui/src/components/"
+    }
+  }
+  </script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -213,10 +224,10 @@
   <script type="module" src="./mock-auth-api.mjs"></script>
 
   <!-- PAN Core -->
-  <script type="module" src="../src/components/pan-bus.mjs"></script>
-  <script type="module" src="../src/components/pan-client.mjs"></script>
-  <script type="module" src="../src/components/pan-auth.mjs"></script>
-  <script type="module" src="../src/components/pan-data-connector.mjs"></script>
+  <script type="module" src="@pan/components/pan-bus.mjs"></script>
+  <script type="module" src="@pan/components/pan-client.mjs"></script>
+  <script type="module" src="@pan/components/pan-auth.mjs"></script>
+  <script type="module" src="@pan/components/pan-data-connector.mjs"></script>
 
   <!-- Auth Manager (no build, no config needed) -->
   <pan-auth
@@ -236,7 +247,7 @@
 
   <!-- Components -->
   <script type="module">
-    import { PanClient } from '../../core/src/components/pan-client.mjs';
+    import { PanClient } from '@pan/core/pan-client.mjs';
 
     // Auth Status Component
     customElements.define('auth-status', class extends HTMLElement {

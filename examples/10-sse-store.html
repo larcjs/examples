@@ -1,5 +1,16 @@
 <!doctype html><meta charset="utf-8" />
 <title>PAN + SSE + Store (Auto‑save)</title>
+
+  <!-- Import Maps for clean component imports -->
+  <script type="importmap">
+  {
+    "imports": {
+      "@pan/core/": "/core/src/components/",
+      "@pan/components/": "/examples/src/components/",
+      "@pan/ui/": "/ui/src/components/"
+    }
+  }
+  </script>
 <style>
   :root{ color-scheme: light dark }
   body{font:14px/1.4 system-ui;margin:20px}
@@ -38,13 +49,13 @@
 
 <script type="module">
     if (!customElements.get('pan-bus')) {
-      await import('../../core/src/components/pan-bus.mjs');
+      await import('@pan/core/pan-bus.mjs');
     }
   </script>
 <script type="module">
-  import { createStore, bind } from '../src/components/pan-store.mjs';
-  import { syncItem } from '../src/components/pan-store-pan.mjs';
-  import { PanClient } from '../../core/src/components/pan-client.mjs';
+  import { createStore, bind } from '@pan/components/pan-store.mjs';
+  import { syncItem } from '@pan/components/pan-store-pan.mjs';
+  import { PanClient } from '@pan/core/pan-client.mjs';
 
   // REST connector points to the sidecar server
   const dc = document.createElement('pan-data-connector');

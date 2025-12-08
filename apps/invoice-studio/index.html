@@ -4,7 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PAN Invoice Studio</title>
-  <script type="module" src="../../src/pan.mjs"></script>
+
+  <!-- Import Maps for clean component imports -->
+  <script type="importmap">
+  {
+    "imports": {
+      "@pan/core/": "/core/src/components/",
+      "@pan/components/": "/examples/src/components/",
+      "@pan/ui/": "/ui/src/components/"
+    }
+  }
+  </script>
+
+  <!-- PAN Autoload: loads pan-bus and enables automatic component discovery -->
+  <script type="module">
+    if (!customElements.get('pan-bus')) {
+      await import('@pan/core/pan-bus.mjs');
+    }
+    // Load autoload system to discover and load custom elements on demand
+    await import('../../src/pan.mjs');
+  </script>
 
   <!-- jsPDF for PDF export -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -126,7 +145,7 @@
   <script type="module" src="./lib/data-handler.mjs"></script>
 
   <script type="module">
-    import { PanClient } from '../../../core/src/components/pan-client.mjs';
+    import { PanClient } from '@pan/core/pan-client.mjs';
 
     const client = new PanClient();
 

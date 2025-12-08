@@ -4,6 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PAN Enhanced Security & Memory Management</title>
+
+  <!-- Import Maps for clean component imports -->
+  <script type="importmap">
+  {
+    "imports": {
+      "@pan/core/": "/core/src/components/",
+      "@pan/components/": "/examples/src/components/",
+      "@pan/ui/": "/ui/src/components/"
+    }
+  }
+  </script>
   <!-- Strict CSP for production -->
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
@@ -93,7 +104,7 @@
   <h1>🔒 PAN Enhanced: Security & Memory Management</h1>
 
   <!-- Enhanced bus with security features -->
-  <script type="module" src="../src/components/pan-bus-enhanced.mjs"></script>
+  <script type="module" src="@pan/components/pan-bus-enhanced.mjs"></script>
 
   <pan-bus-enhanced
     max-retained="20"
@@ -145,7 +156,7 @@
   </div>
 
   <script type="module">
-    import { PanClient } from '../../core/src/components/pan-client.mjs';
+    import { PanClient } from '@pan/core/pan-client.mjs';
 
     const client = new PanClient();
     await client.ready();

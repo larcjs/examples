@@ -4,6 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PAN Demo Suite · 12 PHP Connector</title>
+
+  <!-- Import Maps for clean component imports -->
+  <script type="importmap">
+  {
+    "imports": {
+      "@pan/core/": "/core/src/components/",
+      "@pan/components/": "/examples/src/components/",
+      "@pan/ui/": "/ui/src/components/"
+    }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -71,13 +82,13 @@
 
   <script type="module">
     if (!customElements.get('pan-bus')) {
-      await import('../../core/src/components/pan-bus.mjs');
+      await import('@pan/core/pan-bus.mjs');
     // Load autoload system to discover and load custom elements on demand
     await import('../src/pan.mjs');
     }
   </script>
   <script type="module">
-    import { PanClient } from '../../core/src/components/pan-client.mjs';
+    import { PanClient } from '@pan/core/pan-client.mjs';
 
     const pc = new PanClient();
     const $ = (s)=> document.querySelector(s);
